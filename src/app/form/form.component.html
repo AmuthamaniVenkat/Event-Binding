@@ -1,0 +1,33 @@
+<form novalidate (ngSubmit)="onSubmit()"[formGroup]="myform">
+  <fieldset>
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" class="form-control">
+    </div>
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class="form-control">
+    </div>
+  </fieldset>
+
+  <div class="form-group">
+    <label>Email</label>
+    <input type="email" class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>Password</label>
+    <input type="password" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Language</label>
+    <select class="form-control">
+      <option value="">Please select a language</option>
+      <option *ngFor="let lang of langs" [value]="lang">{{lang}}</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-primary" >Submit</button>
+
+  <pre>{{myform.value | json}}</pre>
+</form>
